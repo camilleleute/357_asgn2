@@ -8,7 +8,7 @@ int main(void) {
     char line[2048];
 
     while (fgets(line, sizeof(line), stdin) != NULL) {
-        printf("%s", line);
+        stringFormatter(line);
     }
     /*while (scanf("%s", line) != EOF) {
 	printf("%s\n", line);    

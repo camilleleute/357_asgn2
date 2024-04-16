@@ -11,12 +11,11 @@ int stringFormatter(char *line){
 }
 
 void removeWhiteSpace(char *str, int strleng) {
-	int i = 0;
-	int j = 0;
-	for (i = 0; i < strleng; i++) {
+	int i, j;
+	for (i = 0, j = 0; i < strleng; i++) {
 		if ((str[i] != ' ') && (str[i] != '\t')) {
-		*(str+j) = str[i];
-		j++;
+		str[j++] = str[i];
+		
 		}
 	}
 	str[j] = '\0';
