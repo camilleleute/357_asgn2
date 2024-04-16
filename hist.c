@@ -5,10 +5,14 @@
 
 
 int main(void) {
-    
-    while (scanf("%s", &line) != EOF) {
-    
+    char line[2048];
+
+    while (fgets(line, sizeof(line), stdin) != NULL) {
+        printf("%s", line);
     }
+    /*while (scanf("%s", line) != EOF) {
+	printf("%s\n", line);    
+    }*/
 
     return 0;
 }
