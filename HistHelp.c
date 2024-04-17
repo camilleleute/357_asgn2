@@ -15,13 +15,19 @@ int stringFormatter(char *line, int linecnt){
 	} else {
 		columns =  removeWhiteSpace(line, length);
 		printf("%s", line);
-		if (columns != headerColumns) {
-			return 1;
-		} else {
-			if (columns == 0) {
+		if (columns == 0) {
 			return 2;
+		} else {
+			if (columns != headerColumns) {
+			return 1;
 			} else {
-			return 0;	
+				char *token = malloc(sizeof(char) * 1024); 
+		                if (token == NULL) {
+                    			exit(1);
+                		}
+                		parsingString(line, token);
+                		free(token); 
+				return 0;	
 			}
 		}
 	}
@@ -46,4 +52,20 @@ int removeWhiteSpace(char *str, int strleng) {
 	return commas;
 }
 
-
+void parsingString(char *line, char token) {
+	int length = 0;
+	length = strlen(line);
+	int i, j;
+	int start = 0;
+	for (i = 0; i < length; i++) {
+		if ((line[i] == ',') || (line[i] == '\0')) {
+			for (j = start; j < i; j++) {
+				token[j - start] = line[j];		
+			}
+			token[j - start] = '\0';
+			printf("%s\n", token);
+			start = i+1;
+		}
+	
+	}
+}
