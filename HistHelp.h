@@ -1,2 +1,2 @@
-int stringFormatter(char *);
-void removeWhiteSpace(char *, int);
+int stringFormatter(char *, int);
+int removeWhiteSpace(char *, int);
