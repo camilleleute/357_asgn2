@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include "HistHelp.h"
 #include <string.h>
+#include <stdlib.h>
 int headerColumns = 0;
 
 int stringFormatter(char *line, int linecnt){
@@ -21,12 +22,7 @@ int stringFormatter(char *line, int linecnt){
 			if (columns != headerColumns) {
 			return 1;
 			} else {
-				char *token = malloc(sizeof(char) * 1024); 
-		                if (token == NULL) {
-                    			exit(1);
-                		}
-                		parsingString(line, token);
-                		free(token); 
+				parsingString(line);
 				return 0;	
 			}
 		}
@@ -52,20 +48,23 @@ int removeWhiteSpace(char *str, int strleng) {
 	return commas;
 }
 
-void parsingString(char *line, char token) {
-	int length = 0;
-	length = strlen(line);
-	int i, j;
-	int start = 0;
-	for (i = 0; i < length; i++) {
-		if ((line[i] == ',') || (line[i] == '\0')) {
-			for (j = start; j < i; j++) {
-				token[j - start] = line[j];		
-			}
-			token[j - start] = '\0';
-			printf("%s\n", token);
-			start = i+1;
-		}
-	
+void parsingString(char *line) {
+	char *ptr = strchr(line, ',');
+	int sum = 0;
+	int val = 0;
+	printf("sum before while: %d\n", sum);
+	while (ptr != NULL) {
+		*ptr = '\0';
+		val = strtol(line, ptr - 1, 10);
+		printf("val: %d\n", val);
+		printf("sum before getting sum: %d\n", sum);
+		sum = sum + val;
+		printf("sum: %d\n", sum);
+		line = ptr + 1;
+		ptr = strchr(line, ',');
 	}
+	val = strtol(line, ptr - 1, 10);
+	sum = sum + val;
+	printf("sum of row: %d\n", sum);
 }
+
