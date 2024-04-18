@@ -1,4 +1,4 @@
-int stringFormatter(char *, int);
+int stringFormatter(char *, int, int[]);
 int removeWhiteSpace(char *, int);
 int parsingString(char *);
 void freqArr(int, int[]);

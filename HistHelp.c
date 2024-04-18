@@ -6,7 +6,7 @@
 #include <ctype.h>
 int headerColumns = 0;
 
-int stringFormatter(char *line, int linecnt){
+int stringFormatter(char *line, int linecnt, int freqArray[]){
 	int columns = 0;
 	int length = strlen(line);
 	printf("line count: %d\n", linecnt);
@@ -23,11 +23,10 @@ int stringFormatter(char *line, int linecnt){
 			if (columns != headerColumns) {
 			return 1;
 			} else {
-				int xMax, xMin, yMax;
 				int sum = parsingString(line);
-				int arr[1081] = {0};
-				int *counts = arr + 90;
-				freqArr(sum, counts);		
+				printf("before counts\n");
+				printf("got past *counts init\n");
+				freqArr(sum, freqArray);		
 				return 0;	
 			}
 		}
@@ -84,13 +83,18 @@ int parsingString(char *line) {
 
 
 void freqArr(int num, int arr[]){
+	num = num + 90;
+	if ((num % 2) == 1){
+		num++;
+	}
+	num = num/2;
 	arr[num]++;
 }
 
 int findYMax(int arr[]){
 	int max = arr[0];
 	int i;
-	for (i = 1, i < 1081; i++) {
+	for (i = 1; i <= 541; i++) {
 		if (arr[i] > max){
 			max = arr[i];
 		}
@@ -100,20 +104,19 @@ int findYMax(int arr[]){
 
 int findXMin(int arr[]) {
 	int i;
-	for (i = 0; i < 1081; i++) {
+	for (i = 0; i < 541; i++) {
         if (arr[i] != 0) {
-            return i - 90;
+            return i - 45;
         }
     }
     return -1; 
     }
-}
 
 int findXMax(int arr[]) {
 	int i;
-	for (i = 1080, i >= 0, i--) {
+	for (i = 541; i >= 0; i--) {
 		if (arr[i] !=0) {
-		return i - 90;
+		return i - 45;
 		}
 	}
 	return -1;

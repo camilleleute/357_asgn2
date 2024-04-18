@@ -8,9 +8,13 @@ int main(void) {
 	char line[2048];
 	int lineCount = 0;
 	int num = 0;
+	int xMax = 0;
+	int yMax = 0;
+	int xMin = 0;
+	int freqArray[541] = {0};
 	while (fgets(line, sizeof(line), stdin) != NULL) {
 		lineCount++;
-		num = stringFormatter(line, lineCount);
+		num = stringFormatter(line, lineCount, freqArray);
 		if (num == 1) {
 			printf("Mismatched cells\n");
 			return 1;
@@ -21,7 +25,11 @@ int main(void) {
 	    		}	
     		}	
 	}
-	
-
+	xMax = findXMax(freqArray);
+	xMin = findXMin(freqArray);
+	yMax = findYMax(freqArray);
+	printf("x max: %d\n", xMax);
+	printf("x min: %d\n", xMin);
+	printf("y max: %d\n", yMax);
 	return 0;
 }
