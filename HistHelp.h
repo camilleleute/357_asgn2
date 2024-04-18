@@ -1,3 +1,7 @@
 int stringFormatter(char *, int);
 int removeWhiteSpace(char *, int);
-void parsingString(char *);
+int parsingString(char *);
+void freqArr(int, int[]);
+int findYMax(int[]);
+int findXMin(int[]);
+int findXMax(int[]);
