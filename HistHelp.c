@@ -12,8 +12,8 @@ int stringFormatter(char *line, int linecnt, int freqArray[]){
 	if (linecnt == 1) {
 		headerColumns = removeWhiteSpace(line, length);
 	} else {
-		columns =  removeWhiteSpace(line, length);
-		if (columns == 0) {
+		columns = removeWhiteSpace(line, length);
+		if (columns == -1) {
 			return 2;
 		} else {
 			if (columns != headerColumns) {
@@ -32,15 +32,18 @@ int stringFormatter(char *line, int linecnt, int freqArray[]){
 int removeWhiteSpace(char *str, int strleng) {
 	int i, j;
 	int commas = 0;
-	for (i = 0, j = 0; i < strleng; i++) {
-		if ((str[i] != ' ') && (str[i] != '\t')) {
-		str[j++] = str[i];
-		}
-		if (str[i] == ','){
-		commas++;
-		}
-		if ((str[i] == '"') || (str[i] == '\'') || (str[i] == '\"')) {
-		return 0;
+	char *ptr = strchr(str, '\'');
+	char *ptr2 = strchr(str, '"');
+	if ((ptr != NULL) || (ptr2 != NULL)) {
+		return -1;
+	} else {
+		for (i = 0, j = 0; i < strleng; i++) {
+			if ((str[i] != ' ') && (str[i] != '\t')) {
+			str[j++] = str[i];
+			}
+			if (str[i] == ','){
+			commas++;
+			}	
 		}
 	}
 	str[j] = '\0';
@@ -48,9 +51,10 @@ int removeWhiteSpace(char *str, int strleng) {
 }
 
 int parsingString(char *line) {
-	char *ptr = strchr(line, ',');
 	int sum = 0;
 	int val = 0;
+	char *ptr = strchr(line, ',');
+	printf("line: %s\n", line);
 	while (ptr != NULL) {
 		int i;
 		int flag = 0;
@@ -73,6 +77,7 @@ int parsingString(char *line) {
 	ptr = strchr(line, '\0');
         val = strtol(line, &ptr - 1, 10);
 	sum = sum + val;
+	printf("sum of line: %d\n", sum);
 	return sum;
 }
 
@@ -89,7 +94,7 @@ void freqArr(int num, int arr[]){
 int findYMax(int arr[]){
 	int max = arr[0];
 	int i, rem;
-	for (i = 1; i < 541; i++) {
+	for (i = 1; i < 540; i++) {
 		if (arr[i] > max){
 			max = arr[i];
 		}
@@ -98,20 +103,18 @@ int findYMax(int arr[]){
         if (rem != 0){
 		max += (5 - rem);
         }
-	printf("y max: %d\n", max);
 	return max;
 }
 
 int findXMin(int arr[]) {
 	int i, minx, rem;
-	for (i = 0; i <= 541; i++) {
+	for (i = 0; i <= 540; i++) {
         if (arr[i] != 0) {
 	    minx = i - 45;
 	    rem = minx % 5;
 	    if (rem != 0) {
 	    	minx = minx - (5 + rem)%5;
 	    }
-	    printf("x min: %d\n", minx);
 	    return 2*minx;
  	}
     }
@@ -129,7 +132,6 @@ int findXMax(int arr[]) {
 		if (rem != 0){
 			maxx = maxx + (5 - rem)%5;
 		}
-		printf("x max: %d\n", maxx);
 		return 2*maxx;
 		}
 	}

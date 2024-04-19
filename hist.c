@@ -20,7 +20,7 @@ int main(void) {
 			printf("./hist: Mismatched cells\r\n");
 			return 1;
 		} else {
-			if (num == 2) {
+			if (num == -1) {
             		printf("./hist: Unsupported quotes\r\n");
             		return 2;
 	    		}	
