@@ -107,7 +107,7 @@ int findXMin(int arr[]) {
 	    minx = i - 45;
 	    rem = minx % 5;
 	    if (rem != 0) {
-	    	minx = minx - (5 + rem);
+	    	minx = minx - (5 + rem)%5;
 	    }
 	    return 2*minx;
  	}
