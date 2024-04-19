@@ -29,9 +29,6 @@ int main(void) {
 	xMax = findXMax(freqArray);
 	xMin = findXMin(freqArray);
 	yMax = findYMax(freqArray);
-	printf("x max: %d\n", xMax);
-	printf("x min: %d\n", xMin);
-	printf("y max: %d\n", yMax);
 	printHistogram(freqArray, xMax, yMax, xMin);
 	return 0;
 }

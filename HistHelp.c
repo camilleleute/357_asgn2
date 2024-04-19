@@ -9,13 +9,10 @@ int headerColumns = 0;
 int stringFormatter(char *line, int linecnt, int freqArray[]){
 	int columns = 0;
 	int length = strlen(line);
-	printf("line count: %d\n", linecnt);
 	if (linecnt == 1) {
 		headerColumns = removeWhiteSpace(line, length);
-		printf("%s", line);
 	} else {
 		columns =  removeWhiteSpace(line, length);
-		printf("%s", line);
 		if (columns == 0) {
 			return 2;
 		} else {
@@ -75,7 +72,6 @@ int parsingString(char *line) {
 	ptr = strchr(line, '\0');
         val = strtol(line, &ptr - 1, 10);
 	sum = sum + val;
-	printf("sum of row: %d\n", sum);
 	return sum;
 }
 
@@ -86,7 +82,6 @@ void freqArr(int num, int arr[]){
 		num++;
 	}
 	num = num/2;
-	printf("num: %d\n", num);
 	arr[num]++;
 }
 
@@ -110,7 +105,6 @@ int findXMin(int arr[]) {
 	for (i = 0; i <= 541; i++) {
         if (arr[i] != 0) {
 		minx = i - 45;
-		printf("minx: %d\n", minx);
 	    rem = minx % 5;
 	    if (rem != 0) {
 	    	minx -= rem;
