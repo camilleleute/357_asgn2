@@ -38,7 +38,7 @@ int removeWhiteSpace(char *str, int strleng) {
 		if (str[i] == ','){
 		commas++;
 		}
-		if ((str[i] == '"') || (str[i] == '\'')) {
+		if ((str[i] == '"') || (str[i] == '\'') || (str[i] == '\"')) {
 		return 0;
 		}
 	}
@@ -97,6 +97,7 @@ int findYMax(int arr[]){
         if (rem != 0){
 		max += (5 - rem);
         }
+	printf("y max: %d\n", max);
 	return max;
 }
 
@@ -109,6 +110,7 @@ int findXMin(int arr[]) {
 	    if (rem != 0) {
 	    	minx = minx - (5 + rem)%5;
 	    }
+	    printf("x min: %d\n", minx);
 	    return 2*minx;
  	}
     }
@@ -124,6 +126,7 @@ int findXMax(int arr[]) {
 		if (rem != 0){
 			maxx = maxx + (5 - rem)%5;
 		}
+		printf("x max: %d\n", maxx);
 		return 2*maxx;
 		}
 	}
