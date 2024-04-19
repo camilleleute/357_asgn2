@@ -13,15 +13,16 @@ int main(void) {
 	int xMin = 0;
 	int freqArray[541] = {0};
 	memset(freqArray, 0, sizeof(freqArray));
+	printf("\n");
 	while (fgets(line, sizeof(line), stdin) != NULL) {
 		lineCount++;
 		num = stringFormatter(line, lineCount, freqArray);
 		if (num == 1) {
-			printf("./hist: Mismatched cells\n");
+			printf("./hist: Mismatched cells\r\n");
 			return 1;
 		} else {
 			if (num == 2) {
-            		printf("./hist: Unsupported quotes\n");
+            		printf("./hist: Unsupported quotes\r\n");
             		return 2;
 	    		}	
     		}	

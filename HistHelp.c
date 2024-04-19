@@ -56,7 +56,7 @@ int parsingString(char *line) {
 		int len = ptr - line;
 		*ptr = '\0';
 		for (i = 0; i < len; i++) {
-			if (!(isdigit(line[i]))) {
+			if ((!(isdigit(line[i]))) && (line[i] != '-')){
 				flag = 1;
 			}
 		}
@@ -104,10 +104,10 @@ int findXMin(int arr[]) {
 	int i, minx, rem;
 	for (i = 0; i <= 541; i++) {
         if (arr[i] != 0) {
-		minx = i - 45;
+	    minx = i - 45;
 	    rem = minx % 5;
 	    if (rem != 0) {
-	    	minx -= rem;
+	    	minx = minx - (5 + rem);
 	    }
 	    return 2*minx;
  	}
@@ -122,7 +122,7 @@ int findXMax(int arr[]) {
 		maxx = i - 45;
 		rem = maxx % 5;
 		if (rem != 0){
-			maxx += (5 - rem);
+			maxx = maxx + (5 - rem)%5;
 		}
 		return 2*maxx;
 		}
@@ -174,20 +174,10 @@ void printHistogram(int arr[], int maxX, int maxY, int minX){
 	printf("    ");
 	for (j = minX/2; j <= maxX/2; j++){
 		if (j%5 == 0) {
-			if ((j > 99) || (j < -9) || (j==minX/2)){
-				printf("  %d", j*2);
-			} else {
-				if ((abs(j) > 9) || (j<0)) {
-				printf("   %d", j*2);
-				} else {
-				printf("   %d", j*2);
-				}
-			}
-		} 
+			printf("%3d  ", j);
+		}
 	}
-	printf("\r\n");
-}
-
+	printf("\r\n");}
 void hashtagPrint(int num, int arr[], int minX, int maxX){
 	int i = 0;
 	int newX, newY;
