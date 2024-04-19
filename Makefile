@@ -9,5 +9,7 @@ hist.o: hist.c
 HistHelp.o: HistHelp.c HistHelp.h
 	gcc -Wall -Wextra -Werror -ansi -pedantic -c HistHelp.c
 
+debug: 
+	gcc -Wall -Wextra -Werror -ansi -pedantic -g HistHelp.c hist.c
 
 clean: rm *.o
