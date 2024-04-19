@@ -88,7 +88,7 @@ void freqArr(int num, int arr[]){
 int findYMax(int arr[]){
 	int max = arr[0];
 	int i, rem;
-	for (i = 1; i <= 541; i++) {
+	for (i = 1; i < 541; i++) {
 		if (arr[i] > max){
 			max = arr[i];
 		}
@@ -116,8 +116,10 @@ int findXMin(int arr[]) {
 }
 
 int findXMax(int arr[]) {
-	int i, maxx, rem;
-	for (i = 541; i >= 0; i--) {
+	int i = 0;
+	int maxx = 0; 
+	int rem = 0;
+	for (i = 540; i >= 0; i--) {
 		if (arr[i] !=0) {
 		maxx = i - 45;
 		rem = maxx % 5;
@@ -157,9 +159,9 @@ void printHistogram(int arr[], int maxX, int maxY, int minX){
 		hashtagPrint(check, arr, minX, maxX);
 		if (((i-1)%5) == 0){
                         yAxis = maxY - i + 1;
-			printf(" T %d\r\n", yAxis);
+			printf(" T %d\n", yAxis);
 		} else {
-			printf(" |\r\n");
+			printf(" |\n");
 		}
 	}
 	printf("    +-");
@@ -170,14 +172,14 @@ void printHistogram(int arr[], int maxX, int maxY, int minX){
 			printf("-");
 		}
 	} 
-	printf("-+\r\n");
+	printf("-+\n");
 	printf("  ");
 	for (j = minX/2; j <= maxX/2; j++){
 		if (j%5 == 0) {
 			printf("  %3d", j*2);
 		}
 	}
-	printf("\r\n");
+	printf("\n");
 }
 void hashtagPrint(int num, int arr[], int minX, int maxX){
 	int i = 0;
