@@ -54,7 +54,7 @@ int parsingString(char *line) {
 	int sum = 0;
 	int val = 0;
 	char *ptr = strchr(line, ',');
-	printf("line: %s\n", line);
+	
 	while (ptr != NULL) {
 		int i;
 		int flag = 0;
@@ -77,10 +77,8 @@ int parsingString(char *line) {
 	ptr = strchr(line, '\0');
         val = strtol(line, &ptr - 1, 10);
 	sum = sum + val;
-	printf("sum of line: %d\n", sum);
-	return sum;
+		return sum;
 }
-
 
 void freqArr(int num, int arr[]){
 	num = num + 90;
