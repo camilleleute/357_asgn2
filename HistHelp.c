@@ -171,10 +171,10 @@ void printHistogram(int arr[], int maxX, int maxY, int minX){
 		}
 	} 
 	printf("-+\r\n");
-	printf("    ");
+	printf("  ");
 	for (j = minX/2; j <= maxX/2; j++){
 		if (j%5 == 0) {
-			printf("%3d  ", j);
+			printf("  %3d", j*2);
 		}
 	}
 	printf("\r\n");}
