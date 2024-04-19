@@ -155,7 +155,12 @@ void printHistogram(int arr[], int maxX, int maxY, int minX){
 			check = maxY - i + 1;
 		}
 		hashtagPrint(check, arr, minX, maxX);
-		printf(" |\n");
+		if (((i-1)%5) == 0){
+                        yAxis = maxY - i + 1;
+			printf(" T %d\r\n", yAxis);
+		} else {
+			printf(" |\r\n");
+		}
 	}
 	printf("    +-");
 	for (j = 0; j <= (range)/2; j++) {
@@ -165,7 +170,7 @@ void printHistogram(int arr[], int maxX, int maxY, int minX){
 			printf("-");
 		}
 	} 
-	printf("-+\n");
+	printf("-+\r\n");
 	printf("    ");
 	for (j = minX/2; j <= maxX/2; j++){
 		if (j%5 == 0) {
@@ -180,7 +185,7 @@ void printHistogram(int arr[], int maxX, int maxY, int minX){
 			}
 		} 
 	}
-	printf("\n");
+	printf("\r\n");
 }
 
 void hashtagPrint(int num, int arr[], int minX, int maxX){
