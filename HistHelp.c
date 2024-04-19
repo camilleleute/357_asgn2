@@ -28,6 +28,7 @@ int stringFormatter(char *line, int linecnt, int freqArray[]){
 	return 0;
 }
 
+
 int removeWhiteSpace(char *str, int strleng) {
 	int i, j;
 	int commas = 0;
