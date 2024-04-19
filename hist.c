@@ -16,11 +16,11 @@ int main(void) {
 		lineCount++;
 		num = stringFormatter(line, lineCount, freqArray);
 		if (num == 1) {
-			printf("Mismatched cells\n");
+			printf("./hist: Mismatched cells\n");
 			return 1;
 		} else {
 			if (num == 2) {
-            		printf("Unsupported quotes\n");
+            		printf("./hist: Unsupported quotes\n");
             		return 2;
 	    		}	
     		}	
@@ -31,5 +31,6 @@ int main(void) {
 	printf("x max: %d\n", xMax);
 	printf("x min: %d\n", xMin);
 	printf("y max: %d\n", yMax);
+	printHistogram(freqArray, xMax, yMax, xMin);
 	return 0;
 }
