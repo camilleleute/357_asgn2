@@ -56,11 +56,11 @@ int parsingString(char *line) {
 	while (ptr != NULL) {
 		int i;
 		int flag = 0;
-		int len = &ptr - &line;
+		int len = ptr - line;
 		*ptr = '\0';
 		for (i = 0; i < len; i++) {
 			if (!(isdigit(line[i]))) {
-				val = 0;
+				flag = 1;
 			}
 		}
 		if (flag == 0) {
@@ -72,7 +72,8 @@ int parsingString(char *line) {
 		line = ptr + 1;
 		ptr = strchr(line, ',');
 	}
-	val = strtol(line, &ptr - 1, 10);
+	ptr = strchr(line, '\0');
+        val = strtol(line, &ptr - 1, 10);
 	sum = sum + val;
 	printf("sum of row: %d\n", sum);
 	return sum;
@@ -105,7 +106,7 @@ int findYMax(int arr[]){
 
 int findXMin(int arr[]) {
 	int i, minx, rem;
-	for (i = 0; i < 541; i++) {
+	for (i = 0; i <= 541; i++) {
         if (arr[i] != 0) {
 		minx = i - 45;
 		printf("minx: %d\n", minx);
@@ -136,16 +137,9 @@ int findXMax(int arr[]) {
 
 
 void printHistogram(int arr[], int maxX, int maxY, int minX){
-	int i = 0, j = 0, yAxis;
-	arr[0] = 0;
-	for (i = 0; i =< maxY; i++) {
-		if (i == 0) {
-			printf("    |");
-			for (j = 0; j < (maxX - minX)/2 + 3; j++) {
-				printf(" ");
-			}
-			printf("|\n");
-		}
+	int i = 0, j = 0, yAxis, check;
+	int range = maxX - minX;
+	for (i = 0; i <= maxY; i++) {
 		if (((i-1)%5) == 0){
 			yAxis = maxY - i + 1;
 			if (yAxis > 99) {
@@ -156,13 +150,20 @@ void printHistogram(int arr[], int maxX, int maxY, int minX){
 				} else {
 					printf("  %d T ", yAxis);
 				}
-				
 			}
-		}
+		} else {
+			printf("    | ");}
 
-	} 
-	printf("+-");
-	for (j = 0; j <= (maxX - minX)/2; j++) {
+		if (i == 0){
+			check = 10000;
+		} else {
+			check = maxY - i + 1;
+		}
+		hashtagPrint(check, arr, minX, maxX);
+		printf(" |\n");
+	}
+	printf("    +-");
+	for (j = 0; j <= (range)/2; j++) {
 		if (j%5 == 0){
 			printf("|");
 		}else{
@@ -173,3 +174,14 @@ void printHistogram(int arr[], int maxX, int maxY, int minX){
 
 }
 
+void hashtagPrint(int num, int arr[], int minX, int maxX){
+	int i = 0;
+	for (i = (minX/2); i <= (maxX/2); i++){
+		printf("num: %d, index: %d, val at index: %d\n", num, i, arr[i]);
+		if (num <= arr[i]) {
+			printf("#");
+		} else {
+			printf(" ");
+		}
+	}
+}

@@ -2,7 +2,7 @@
 
 #include <stdio.h>
 #include "HistHelp.h"
-
+#include <string.h>
 
 int main(void) {
 	char line[2048];
@@ -12,6 +12,7 @@ int main(void) {
 	int yMax = 0;
 	int xMin = 0;
 	int freqArray[541] = {0};
+	memset(freqArray, 0, sizeof(freqArray));
 	while (fgets(line, sizeof(line), stdin) != NULL) {
 		lineCount++;
 		num = stringFormatter(line, lineCount, freqArray);
