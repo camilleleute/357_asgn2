@@ -86,6 +86,7 @@ void freqArr(int num, int arr[]){
 		num++;
 	}
 	num = num/2;
+	printf("num: %d\n", num);
 	arr[num]++;
 }
 
@@ -171,13 +172,29 @@ void printHistogram(int arr[], int maxX, int maxY, int minX){
 		}
 	} 
 	printf("-+\n");
-
+	printf("    ");
+	for (j = minX/2; j <= maxX/2; j++){
+		if (j%5 == 0) {
+			if ((j > 99) || (j < -9) || (j==minX/2)){
+				printf("  %d", j*2);
+			} else {
+				if ((abs(j) > 9) || (j<0)) {
+				printf("   %d", j*2);
+				} else {
+				printf("   %d", j*2);
+				}
+			}
+		} 
+	}
+	printf("\n");
 }
 
 void hashtagPrint(int num, int arr[], int minX, int maxX){
 	int i = 0;
-	for (i = (minX/2); i <= (maxX/2); i++){
-		printf("num: %d, index: %d, val at index: %d\n", num, i, arr[i]);
+	int newX, newY;
+	newX = minX/2 + 45;
+	newY = maxX/2 + 45;
+	for (i = (newX); i <= (newY); i++){
 		if (num <= arr[i]) {
 			printf("#");
 		} else {
