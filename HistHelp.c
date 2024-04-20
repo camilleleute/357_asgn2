@@ -64,7 +64,6 @@ int parsingString(char *line) {
 	ptr = strchr(line, '\0');
         val = calcValue(line, ptr);
 	sum = sum + val;
-	printf("sum is: %d\n", sum);
 	return sum;
 }
 
@@ -73,21 +72,15 @@ int calcValue(char *line, char *ptr){
 	int i = 0;
 	int flag = 0;
 	int len = ptr - line;
-	printf("section length is: %d\n", len); 
-	printf("line is %s\n", line);
 	*ptr = '\0';
 	for (i = 0; i < len; i++) {
-		printf("char val being check: %c\n", line[i]);
 		if (((isdigit(line[i]))==0) && (line[i] != '-')){
                                 flag = 1;
-				printf("flag set by bad num!\n");        
 		}
 		if ((i != 0) && (line[i] == '-')){
                                 flag = 1;
-				 printf("flag set by incorrect hyphen\n");
                         }
 	}
-	printf("flag value %d\n", flag);
 	if (flag == 0) {
 		val = strtol(line, NULL, 10);
                 } else {
@@ -167,7 +160,6 @@ int findXMax(int arr[]) {
 		if (rem != 0){
 			maxx = maxx + (5 - rem)%5;
 		}
-		printf("max x: %d\n", maxx);
 		return 2*maxx;
 		}
 	}
@@ -178,8 +170,6 @@ int findXMax(int arr[]) {
 void printHistogram(int arr[], int maxX, int maxY, int minX, int minXOdd){
 	int i = 0, j = 0, yAxis, check;
 	minX =  minX-(minXOdd*10);
-	printf("minx: %d\n", minX);
-	printf("max x: %d\n", maxX);
 	for (i = 0; i <= maxY; i++) {
 		if (((i-1)%5) == 0){
 			yAxis = maxY - i + 1;
