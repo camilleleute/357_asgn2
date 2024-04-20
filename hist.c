@@ -19,11 +19,11 @@ int main(void) {
 		lineCount++;
 		num = stringFormatter(line, lineCount, freqArray, stupidArray);
 		if (num == 1) {
-			printf("./hist: Mismatched cells\r\n");
+			printf("./hist: Mismatched cells\n");
 			return 1;
 		} else {
-			if (num == -1) {
-            		printf("./hist: Unsupported quotes\r\n");
+			if (num == 2) {
+            		printf("./hist: Unsupported quotes\n");
             		return 2;
 	    		}	
     		}	

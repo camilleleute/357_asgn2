@@ -33,19 +33,16 @@ int stringFormatter(char *line, int linecnt, int freqArray[], int stupidArr[]){
 int removeWhiteSpace(char *str, int strleng) {
 	int i, j;
 	int commas = 0;
-	char *ptr = strchr(str, '\'');
-	char *ptr2 = strchr(str, '"');
-	if ((ptr != NULL) || (ptr2 != NULL)) {
-		return -1;
-	} else {
-		for (i = 0, j = 0; i < strleng; i++) {
-			if ((str[i] != ' ') && (str[i] != '\t') && (str[i] != '\n') && (str[i] != '\n')) {
+	for (i = 0, j = 0; i < strleng; i++) {
+		if ((str[i] != ' ') && (str[i] != '\t') && (str[i] != '\n') && (str[i] != '\n')) {
 			str[j++] = str[i];
-			}
-			if (str[i] == ','){
-			commas++;
-			}	
 		}
+		if (str[i] == ','){
+		commas++;
+		}
+		if ((str[i] == '\'')||(str[i] == '\"')){
+			return -1;
+		}	
 	}
 	str[j] = '\0';
 	return commas;
@@ -103,7 +100,7 @@ int minStupidArray(int arr[]){
 		break;
         	}
 	}
-	if (minx%2 == -1){
+	if (minx%10 == -1){
 		odd = 1;
 	}
     return odd;

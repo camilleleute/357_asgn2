@@ -1,0 +1,4 @@
+name, num, num
+joe, -15, 6
+maria, 0, 3
+johnne, 0, 0
