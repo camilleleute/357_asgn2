@@ -54,31 +54,40 @@ int parsingString(char *line) {
 	int sum = 0;
 	int val = 0;
 	char *ptr = strchr(line, ',');
-	
 	while (ptr != NULL) {
-		int i;
-		int flag = 0;
-		int len = ptr - line;
-		*ptr = '\0';
-		for (i = 0; i < len; i++) {
-			if ((!(isdigit(line[i]))) && (line[i] != '-')){
-				flag = 1;
-			}
-		}
-		if (flag == 0) {
-			val = strtol(line, &ptr - 1, 10);
-		} else {
-			val = 0;
-		}
+		val = calcValue(line, ptr);
 		sum = sum + val;
 		line = ptr + 1;
 		ptr = strchr(line, ',');
 	}
 	ptr = strchr(line, '\0');
-        val = strtol(line, &ptr - 1, 10);
+        val = calcValue(line, ptr);
 	sum = sum + val;
-		return sum;
+	return sum;
 }
+
+int calcValue(char *line, char *ptr){
+	int val;
+	int i = 0;
+	int flag = 0;
+	int len = ptr - line - 1;
+	*ptr = '\0';
+	for (i = 0; i < len; i++) {
+		if ((!(isdigit(line[i]))) && (line[i] != '-')){
+                                flag = 1;
+                        }
+		if ((i != 0) && (line[i] == '-')){
+                                flag = 1;
+                        }
+	}
+	if (flag == 0) {
+		val = strtol(line, &ptr - 1, 10);
+                } else {
+		val = 0;
+        }
+	return val;
+}
+
 
 void freqArr(int num, int arr[]){
 	num = num + 90;

@@ -6,4 +6,5 @@ int findYMax(int[]);
 int findXMin(int[]);
 int findXMax(int[]);
 void printHistogram(int[], int, int, int);
+int calcValue(char *, char *);
 void hashtagPrint(int, int[], int, int);
