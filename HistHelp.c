@@ -6,7 +6,7 @@
 #include <ctype.h>
 int headerColumns = 0;
 
-int stringFormatter(char *line, int linecnt, int freqArray[]){
+int stringFormatter(char *line, int linecnt, int freqArray[], int stupidArr[]){
 	int columns = 0;
 	int length = strlen(line);
 	if (linecnt == 1) {
@@ -20,7 +20,8 @@ int stringFormatter(char *line, int linecnt, int freqArray[]){
 			return 1;
 			} else {
 				int sum = parsingString(line);
-				freqArr(sum, freqArray);		
+				freqArr(sum, freqArray);
+				stupidArray(sum, stupidArr);		
 				return 0;	
 			}
 		}
@@ -88,6 +89,25 @@ int calcValue(char *line, char *ptr){
 	return val;
 }
 
+void stupidArray(int num, int arr[]){
+	num = num + 90;
+	arr[num]++;
+}
+
+int minStupidArray(int arr[]){
+	int i, minx;
+	int odd = 0;
+        for (i = 0; i <= 1080; i++) {
+        	if (arr[i] != 0) {
+        	minx = i - 90;
+        	}
+	}
+	if ((minx%2 == 1)  && (minx < 0)){
+		odd = 1;
+	}
+    return odd;
+}
+
 
 void freqArr(int num, int arr[]){
 	num = num + 90;
@@ -146,9 +166,8 @@ int findXMax(int arr[]) {
 }
 
 
-void printHistogram(int arr[], int maxX, int maxY, int minX){
+void printHistogram(int arr[], int maxX, int maxY, int minX, int minXOdd){
 	int i = 0, j = 0, yAxis, check;
-	int range = maxX - minX;
 	for (i = 0; i <= maxY; i++) {
 		if (((i-1)%5) == 0){
 			yAxis = maxY - i + 1;
@@ -169,7 +188,7 @@ void printHistogram(int arr[], int maxX, int maxY, int minX){
 		} else {
 			check = maxY - i + 1;
 		}
-		hashtagPrint(check, arr, minX, maxX);
+		hashtagPrint(check, arr, minX-(minXOdd*-2), maxX);
 		if (((i-1)%5) == 0){
                         yAxis = maxY - i + 1;
 			printf(" T %d\n", yAxis);
@@ -178,8 +197,8 @@ void printHistogram(int arr[], int maxX, int maxY, int minX){
 		}
 	}
 	printf("    +-");
-	for (j = 0; j <= (range)/2; j++) {
-		if (j%5 == 0){
+	for (j = 0; j <= (maxX - (minX-(minXOdd*-2)))/2; j++) {
+		if (j%5 == 0) {
 			printf("|");
 		}else{
 			printf("-");
@@ -187,7 +206,7 @@ void printHistogram(int arr[], int maxX, int maxY, int minX){
 	} 
 	printf("-+\n");
 	printf("  ");
-	for (j = minX/2; j <= maxX/2; j++){
+	for (j = (minX*-2)/2; j <= maxX/2; j++){
 		if (j%5 == 0) {
 			printf("  %3d", j*2);
 		}

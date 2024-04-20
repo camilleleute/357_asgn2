@@ -1,10 +1,12 @@
-int stringFormatter(char *, int, int[]);
+int stringFormatter(char *, int, int[], int[]);
 int removeWhiteSpace(char *, int);
 int parsingString(char *);
 void freqArr(int, int[]);
 int findYMax(int[]);
 int findXMin(int[]);
 int findXMax(int[]);
-void printHistogram(int[], int, int, int);
+void printHistogram(int[], int, int, int, int);
 int calcValue(char *, char *);
 void hashtagPrint(int, int[], int, int);
+void stupidArray(int, int[]);
+int minStupidArray(int[]);
