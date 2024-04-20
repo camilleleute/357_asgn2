@@ -1,0 +1,550 @@
+section length is: 7
+line is stanley,7
+char val being check: s
+flag set by bad num!
+char val being check: t
+flag set by bad num!
+char val being check: a
+flag set by bad num!
+char val being check: n
+flag set by bad num!
+char val being check: l
+flag set by bad num!
+char val being check: e
+flag set by bad num!
+char val being check: y
+flag set by bad num!
+flag value 1
+section length is: 2
+line is 7
+char val being check: 7
+char val being check: 
+flag set by bad num!
+flag value 1
+sum is: 0
+section length is: 2
+line is yu,12
+char val being check: y
+flag set by bad num!
+char val being check: u
+flag set by bad num!
+flag value 1
+section length is: 3
+line is 12
+char val being check: 1
+char val being check: 2
+char val being check: 
+flag set by bad num!
+flag value 1
+sum is: 0
+section length is: 5
+line is yusuf,14
+char val being check: y
+flag set by bad num!
+char val being check: u
+flag set by bad num!
+char val being check: s
+flag set by bad num!
+char val being check: u
+flag set by bad num!
+char val being check: f
+flag set by bad num!
+flag value 1
+section length is: 3
+line is 14
+char val being check: 1
+char val being check: 4
+char val being check: 
+flag set by bad num!
+flag value 1
+sum is: 0
+section length is: 6
+line is shelby,15
+char val being check: s
+flag set by bad num!
+char val being check: h
+flag set by bad num!
+char val being check: e
+flag set by bad num!
+char val being check: l
+flag set by bad num!
+char val being check: b
+flag set by bad num!
+char val being check: y
+flag set by bad num!
+flag value 1
+section length is: 3
+line is 15
+char val being check: 1
+char val being check: 5
+char val being check: 
+flag set by bad num!
+flag value 1
+sum is: 0
+section length is: 9
+line is christina,9
+char val being check: c
+flag set by bad num!
+char val being check: h
+flag set by bad num!
+char val being check: r
+flag set by bad num!
+char val being check: i
+flag set by bad num!
+char val being check: s
+flag set by bad num!
+char val being check: t
+flag set by bad num!
+char val being check: i
+flag set by bad num!
+char val being check: n
+flag set by bad num!
+char val being check: a
+flag set by bad num!
+flag value 1
+section length is: 2
+line is 9
+char val being check: 9
+char val being check: 
+flag set by bad num!
+flag value 1
+sum is: 0
+section length is: 6
+line is jaelyn,5
+char val being check: j
+flag set by bad num!
+char val being check: a
+flag set by bad num!
+char val being check: e
+flag set by bad num!
+char val being check: l
+flag set by bad num!
+char val being check: y
+flag set by bad num!
+char val being check: n
+flag set by bad num!
+flag value 1
+section length is: 2
+line is 5
+char val being check: 5
+char val being check: 
+flag set by bad num!
+flag value 1
+sum is: 0
+section length is: 5
+line is calen,6
+char val being check: c
+flag set by bad num!
+char val being check: a
+flag set by bad num!
+char val being check: l
+flag set by bad num!
+char val being check: e
+flag set by bad num!
+char val being check: n
+flag set by bad num!
+flag value 1
+section length is: 2
+line is 6
+char val being check: 6
+char val being check: 
+flag set by bad num!
+flag value 1
+sum is: 0
+section length is: 5
+line is richa,12
+char val being check: r
+flag set by bad num!
+char val being check: i
+flag set by bad num!
+char val being check: c
+flag set by bad num!
+char val being check: h
+flag set by bad num!
+char val being check: a
+flag set by bad num!
+flag value 1
+section length is: 3
+line is 12
+char val being check: 1
+char val being check: 2
+char val being check: 
+flag set by bad num!
+flag value 1
+sum is: 0
+section length is: 6
+line is hayden,0
+char val being check: h
+flag set by bad num!
+char val being check: a
+flag set by bad num!
+char val being check: y
+flag set by bad num!
+char val being check: d
+flag set by bad num!
+char val being check: e
+flag set by bad num!
+char val being check: n
+flag set by bad num!
+flag value 1
+section length is: 2
+line is 0
+char val being check: 0
+char val being check: 
+flag set by bad num!
+flag value 1
+sum is: 0
+section length is: 3
+line is jim,14
+char val being check: j
+flag set by bad num!
+char val being check: i
+flag set by bad num!
+char val being check: m
+flag set by bad num!
+flag value 1
+section length is: 3
+line is 14
+char val being check: 1
+char val being check: 4
+char val being check: 
+flag set by bad num!
+flag value 1
+sum is: 0
+section length is: 5
+line is jiwon,16
+char val being check: j
+flag set by bad num!
+char val being check: i
+flag set by bad num!
+char val being check: w
+flag set by bad num!
+char val being check: o
+flag set by bad num!
+char val being check: n
+flag set by bad num!
+flag value 1
+section length is: 3
+line is 16
+char val being check: 1
+char val being check: 6
+char val being check: 
+flag set by bad num!
+flag value 1
+sum is: 0
+section length is: 6
+line is steven,10
+char val being check: s
+flag set by bad num!
+char val being check: t
+flag set by bad num!
+char val being check: e
+flag set by bad num!
+char val being check: v
+flag set by bad num!
+char val being check: e
+flag set by bad num!
+char val being check: n
+flag set by bad num!
+flag value 1
+section length is: 3
+line is 10
+char val being check: 1
+char val being check: 0
+char val being check: 
+flag set by bad num!
+flag value 1
+sum is: 0
+section length is: 4
+line is erik,12
+char val being check: e
+flag set by bad num!
+char val being check: r
+flag set by bad num!
+char val being check: i
+flag set by bad num!
+char val being check: k
+flag set by bad num!
+flag value 1
+section length is: 3
+line is 12
+char val being check: 1
+char val being check: 2
+char val being check: 
+flag set by bad num!
+flag value 1
+sum is: 0
+section length is: 6
+line is justin,10
+char val being check: j
+flag set by bad num!
+char val being check: u
+flag set by bad num!
+char val being check: s
+flag set by bad num!
+char val being check: t
+flag set by bad num!
+char val being check: i
+flag set by bad num!
+char val being check: n
+flag set by bad num!
+flag value 1
+section length is: 3
+line is 10
+char val being check: 1
+char val being check: 0
+char val being check: 
+flag set by bad num!
+flag value 1
+sum is: 0
+section length is: 6
+line is parker,18
+char val being check: p
+flag set by bad num!
+char val being check: a
+flag set by bad num!
+char val being check: r
+flag set by bad num!
+char val being check: k
+flag set by bad num!
+char val being check: e
+flag set by bad num!
+char val being check: r
+flag set by bad num!
+flag value 1
+section length is: 3
+line is 18
+char val being check: 1
+char val being check: 8
+char val being check: 
+flag set by bad num!
+flag value 1
+sum is: 0
+section length is: 4
+line is yuri,7
+char val being check: y
+flag set by bad num!
+char val being check: u
+flag set by bad num!
+char val being check: r
+flag set by bad num!
+char val being check: i
+flag set by bad num!
+flag value 1
+section length is: 2
+line is 7
+char val being check: 7
+char val being check: 
+flag set by bad num!
+flag value 1
+sum is: 0
+section length is: 4
+line is viet,7
+char val being check: v
+flag set by bad num!
+char val being check: i
+flag set by bad num!
+char val being check: e
+flag set by bad num!
+char val being check: t
+flag set by bad num!
+flag value 1
+section length is: 2
+line is 7
+char val being check: 7
+char val being check: 
+flag set by bad num!
+flag value 1
+sum is: 0
+section length is: 4
+line is miya,11
+char val being check: m
+flag set by bad num!
+char val being check: i
+flag set by bad num!
+char val being check: y
+flag set by bad num!
+char val being check: a
+flag set by bad num!
+flag value 1
+section length is: 3
+line is 11
+char val being check: 1
+char val being check: 1
+char val being check: 
+flag set by bad num!
+flag value 1
+sum is: 0
+section length is: 6
+line is steven,7
+char val being check: s
+flag set by bad num!
+char val being check: t
+flag set by bad num!
+char val being check: e
+flag set by bad num!
+char val being check: v
+flag set by bad num!
+char val being check: e
+flag set by bad num!
+char val being check: n
+flag set by bad num!
+flag value 1
+section length is: 2
+line is 7
+char val being check: 7
+char val being check: 
+flag set by bad num!
+flag value 1
+sum is: 0
+section length is: 6
+line is austin,12
+char val being check: a
+flag set by bad num!
+char val being check: u
+flag set by bad num!
+char val being check: s
+flag set by bad num!
+char val being check: t
+flag set by bad num!
+char val being check: i
+flag set by bad num!
+char val being check: n
+flag set by bad num!
+flag value 1
+section length is: 3
+line is 12
+char val being check: 1
+char val being check: 2
+char val being check: 
+flag set by bad num!
+flag value 1
+sum is: 0
+section length is: 8
+line is nicholas,8
+char val being check: n
+flag set by bad num!
+char val being check: i
+flag set by bad num!
+char val being check: c
+flag set by bad num!
+char val being check: h
+flag set by bad num!
+char val being check: o
+flag set by bad num!
+char val being check: l
+flag set by bad num!
+char val being check: a
+flag set by bad num!
+char val being check: s
+flag set by bad num!
+flag value 1
+section length is: 2
+line is 8
+char val being check: 8
+char val being check: 
+flag set by bad num!
+flag value 1
+sum is: 0
+section length is: 5
+line is rupal,12
+char val being check: r
+flag set by bad num!
+char val being check: u
+flag set by bad num!
+char val being check: p
+flag set by bad num!
+char val being check: a
+flag set by bad num!
+char val being check: l
+flag set by bad num!
+flag value 1
+section length is: 3
+line is 12
+char val being check: 1
+char val being check: 2
+char val being check: 
+flag set by bad num!
+flag value 1
+sum is: 0
+section length is: 9
+line is sharmayne,12
+char val being check: s
+flag set by bad num!
+char val being check: h
+flag set by bad num!
+char val being check: a
+flag set by bad num!
+char val being check: r
+flag set by bad num!
+char val being check: m
+flag set by bad num!
+char val being check: a
+flag set by bad num!
+char val being check: y
+flag set by bad num!
+char val being check: n
+flag set by bad num!
+char val being check: e
+flag set by bad num!
+flag value 1
+section length is: 3
+line is 12
+char val being check: 1
+char val being check: 2
+char val being check: 
+flag set by bad num!
+flag value 1
+sum is: 0
+section length is: 5
+line is megan,13
+char val being check: m
+flag set by bad num!
+char val being check: e
+flag set by bad num!
+char val being check: g
+flag set by bad num!
+char val being check: a
+flag set by bad num!
+char val being check: n
+flag set by bad num!
+flag value 1
+section length is: 3
+line is 13
+char val being check: 1
+char val being check: 3
+char val being check: 
+flag set by bad num!
+flag value 1
+sum is: 0
+max x: 0
+minx: 0
+max x: 0
+    |   |
+ 25 T   T 25
+    | # |
+    | # |
+    | # |
+    | # |
+ 20 T # T 20
+    | # |
+    | # |
+    | # |
+    | # |
+ 15 T # T 15
+    | # |
+    | # |
+    | # |
+    | # |
+ 10 T # T 10
+    | # |
+    | # |
+    | # |
+    | # |
+  5 T # T 5
+    | # |
+    | # |
+    | # |
+    | # |
+    +-|-+
+      0

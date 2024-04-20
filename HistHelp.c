@@ -39,7 +39,7 @@ int removeWhiteSpace(char *str, int strleng) {
 		return -1;
 	} else {
 		for (i = 0, j = 0; i < strleng; i++) {
-			if ((str[i] != ' ') && (str[i] != '\t')) {
+			if ((str[i] != ' ') && (str[i] != '\t') && (str[i] != '\n') && (str[i] != '\n')) {
 			str[j++] = str[i];
 			}
 			if (str[i] == ','){
@@ -72,20 +72,19 @@ int calcValue(char *line, char *ptr){
 	int val;
 	int i = 0;
 	int flag = 0;
-	int len = ptr - line - 2;
+	int len = ptr - line;
+	printf("section length is: %d\n", len); 
 	printf("line is %s\n", line);
 	*ptr = '\0';
 	for (i = 0; i < len; i++) {
-		printf ("is digit T of F: %d\n", isdigit(line[i]));
+		printf("char val being check: %c\n", line[i]);
 		if (((isdigit(line[i]))==0) && (line[i] != '-')){
                                 flag = 1;
-				printf("flag set by bad num!\n");
-                		break;        
+				printf("flag set by bad num!\n");        
 		}
 		if ((i != 0) && (line[i] == '-')){
                                 flag = 1;
-				 printf("flag set by incorrect hyphen!\n");
-				 break;
+				 printf("flag set by incorrect hyphen\n");
                         }
 	}
 	printf("flag value %d\n", flag);
