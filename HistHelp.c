@@ -64,6 +64,7 @@ int parsingString(char *line) {
 	ptr = strchr(line, '\0');
         val = calcValue(line, ptr);
 	sum = sum + val;
+	printf("sum is: %d\n", sum);
 	return sum;
 }
 
@@ -71,16 +72,23 @@ int calcValue(char *line, char *ptr){
 	int val;
 	int i = 0;
 	int flag = 0;
-	int len = ptr - line - 1;
+	int len = ptr - line - 2;
+	printf("line is %s\n", line);
 	*ptr = '\0';
 	for (i = 0; i < len; i++) {
-		if ((!(isdigit(line[i]))) && (line[i] != '-')){
+		printf ("is digit T of F: %d\n", isdigit(line[i]));
+		if (((isdigit(line[i]))==0) && (line[i] != '-')){
                                 flag = 1;
-                        }
+				printf("flag set by bad num!\n");
+                		break;        
+		}
 		if ((i != 0) && (line[i] == '-')){
                                 flag = 1;
+				 printf("flag set by incorrect hyphen!\n");
+				 break;
                         }
 	}
+	printf("flag value %d\n", flag);
 	if (flag == 0) {
 		val = strtol(line, NULL, 10);
                 } else {
@@ -100,9 +108,10 @@ int minStupidArray(int arr[]){
         for (i = 0; i <= 1080; i++) {
         	if (arr[i] != 0) {
         	minx = i - 90;
+		break;
         	}
 	}
-	if ((minx%2 == 1)  && (minx < 0)){
+	if (minx%2 == -1){
 		odd = 1;
 	}
     return odd;
@@ -150,7 +159,7 @@ int findXMin(int arr[]) {
 
 int findXMax(int arr[]) {
 	int i = 0;
-	int maxx = 0; 
+	int maxx; 
 	int rem = 0;
 	for (i = 540; i >= 0; i--) {
 		if (arr[i] !=0) {
@@ -159,6 +168,7 @@ int findXMax(int arr[]) {
 		if (rem != 0){
 			maxx = maxx + (5 - rem)%5;
 		}
+		printf("max x: %d\n", maxx);
 		return 2*maxx;
 		}
 	}
@@ -168,6 +178,9 @@ int findXMax(int arr[]) {
 
 void printHistogram(int arr[], int maxX, int maxY, int minX, int minXOdd){
 	int i = 0, j = 0, yAxis, check;
+	minX =  minX-(minXOdd*10);
+	printf("minx: %d\n", minX);
+	printf("max x: %d\n", maxX);
 	for (i = 0; i <= maxY; i++) {
 		if (((i-1)%5) == 0){
 			yAxis = maxY - i + 1;
@@ -188,7 +201,7 @@ void printHistogram(int arr[], int maxX, int maxY, int minX, int minXOdd){
 		} else {
 			check = maxY - i + 1;
 		}
-		hashtagPrint(check, arr, minX-(minXOdd*-2), maxX);
+		hashtagPrint(check, arr, minX, maxX);
 		if (((i-1)%5) == 0){
                         yAxis = maxY - i + 1;
 			printf(" T %d\n", yAxis);
@@ -197,7 +210,7 @@ void printHistogram(int arr[], int maxX, int maxY, int minX, int minXOdd){
 		}
 	}
 	printf("    +-");
-	for (j = 0; j <= (maxX - (minX-(minXOdd*-2)))/2; j++) {
+	for (j = 0; j <= (maxX - minX)/2; j++) {
 		if (j%5 == 0) {
 			printf("|");
 		}else{
@@ -206,7 +219,7 @@ void printHistogram(int arr[], int maxX, int maxY, int minX, int minXOdd){
 	} 
 	printf("-+\n");
 	printf("  ");
-	for (j = (minX*-2)/2; j <= maxX/2; j++){
+	for (j = minX/2; j <= maxX/2; j++){
 		if (j%5 == 0) {
 			printf("  %3d", j*2);
 		}
