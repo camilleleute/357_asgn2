@@ -81,7 +81,7 @@ int calcValue(char *line, char *ptr){
                         }
 	}
 	if (flag == 0) {
-		val = strtol(line, &ptr - 1, 10);
+		val = strtol(line, NULL, 10);
                 } else {
 		val = 0;
         }
